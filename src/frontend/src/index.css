@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Medical blue/white theme */
+    --background: 0.985 0.004 240;
+    --foreground: 0.16 0.025 258;
+
+    --card: 1 0 0;
+    --card-foreground: 0.16 0.025 258;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.16 0.025 258;
+
+    --primary: 0.3 0.12 258;
+    --primary-foreground: 0.985 0.004 240;
+
+    --secondary: 0.95 0.012 245;
+    --secondary-foreground: 0.3 0.12 258;
+
+    --muted: 0.93 0.01 245;
+    --muted-foreground: 0.52 0.04 255;
+
+    --accent: 0.64 0.2 200;
+    --accent-foreground: 0.985 0.004 240;
+
+    --destructive: 0.57 0.22 27;
+    --destructive-foreground: 0.985 0.004 240;
+
+    --border: 0.88 0.015 245;
+    --input: 0.88 0.015 245;
+    --ring: 0.64 0.2 200;
+
+    --radius: 0.5rem;
+
+    /* Chart colors for 4 stages */
+    --chart-1: 0.7 0.16 155;
+    --chart-2: 0.76 0.14 82;
+    --chart-3: 0.66 0.18 45;
+    --chart-4: 0.59 0.22 27;
+    --chart-5: 0.64 0.2 200;
+
+    /* Sidebar */
+    --sidebar: 0.2 0.06 258;
+    --sidebar-foreground: 0.9 0.01 240;
+    --sidebar-primary: 0.64 0.2 200;
+    --sidebar-primary-foreground: 0.985 0.004 240;
+    --sidebar-accent: 0.28 0.08 258;
+    --sidebar-accent-foreground: 0.9 0.01 240;
+    --sidebar-border: 0.28 0.08 258;
+    --sidebar-ring: 0.64 0.2 200;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: oklch(1 0 0 / 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(1 0 0 / 0.15);
+  }
+  .glass-card {
+    background: oklch(1 0 0 / 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid oklch(1 0 0 / 0.12);
+  }
+  .medical-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.06 258) 0%,
+      oklch(0.25 0.1 258) 50%,
+      oklch(0.22 0.08 248) 100%
+    );
+  }
+  .scan-glow {
+    box-shadow: 0 0 40px oklch(0.64 0.2 200 / 0.3), 0 0 80px
+      oklch(0.64 0.2 200 / 0.1);
+  }
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.64 0.2 200),
+      oklch(0.72 0.16 230)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
